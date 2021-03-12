@@ -91,9 +91,9 @@ function setQuestion(id) {
 function checkAnswer(event) {
     event.preventDefault();
 
-    answers.style.display = "block";
+    answersEl.style.display = "block";
     let p = document.createElement("p");
-    answers.appendChild(p);
+    answersEl.appendChild(p);
 
     setTimeout(function () {
         p.style.display = 'none';
@@ -111,3 +111,68 @@ function checkAnswer(event) {
     }
     setQuestion(questionCount);
 }
+
+function addScore(event) {
+    event.preventDefault();
+
+    finalEl.style.display = "none";
+    highScores.style.display = "block";
+
+    let init = initialsInput.value.toUpperCase();
+    scoreList.push({ initials: init, score: secondsLeft });
+
+    // sort scores
+    scoreList = scoreList.sort((a, b) => {
+        if (a.score < b.score) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    
+    scoreListEl.innerHTML="";
+    for (let i = 0; i < scoreList.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
+        scoreListEl.append(li);
+    }
+
+    //local storage
+    storeScores();
+    displayScores();
+}
+
+function storeScores() {
+    localStorage.setItem("scoreList", JSON.stringify(scoreList));
+}
+
+function displayScores() {
+    // Get stored scores
+    let storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
+
+    if (storedScoreList !== null) {
+        scoreList = storedScoreList;
+    }
+}
+
+// clear scores
+function clearScores() {
+    localStorage.clear();
+    scoreListEl.innerHTML="";
+}
+
+startBtn.addEventListener("click", startQuiz);
+ansBtn.forEach(item => {
+    item.addEventListener('click', checkAnswer);
+});
+
+submitScrBtn.addEventListener("click", addScore);
+
+goBackBtn.addEventListener("click", function () {
+    highScores.style.display = "none";
+    intro.style.display = "block";
+    secondsLeft = 75;
+    timeEl.textContent = `Time:${secondsLeft}s`;
+});
+
+clearScrBtn.addEventListener("click", clearScores);
