@@ -18,7 +18,7 @@ The deployed site:
 
 The following GIF demonstrates the application functionality:
 
-![Quiz - Demo](assets/images/Quiz.gif)
+![Quiz - Demo](./assets/images/Quiz.gif)
 
 
 ## Table of Contents
@@ -43,9 +43,9 @@ MIT license
 
 Screenshots of the website:
 
-![one](assets/images/screenShot1.png)
-![two](assets/images/screenshot2.png)
-![three](assets/images/screenshot3.png)
+![one](./assets/images/screenShot1.png)
+![two](./assets/images/screenshot2.png)
+![three](./assets/images/screenshot3.png)
 
 
 
