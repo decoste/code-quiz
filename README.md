@@ -13,7 +13,11 @@ Code quiz
 
 ## Description
 
-The deployed site:
+A timed quiz website using JavaScript fundamentals that stores high scores
+So that the user csn gauge their progress compared to their peers.
+
+
+The deployed site:  https://decoste.github.io/code-quiz/
 
 
 The following GIF demonstrates the application functionality:
