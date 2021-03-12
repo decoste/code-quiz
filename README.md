@@ -43,9 +43,9 @@ MIT license
 
 Screenshots of the website:
 
-![one](../Assets/images/screenShot1.png)
-![two](../Assets/images/screenshot2.png)
-![three](../Assets/images/screenshot3.png)
+![one](./Assets/images/screenShot1.png)
+![two](./Assets/images/screenshot2.png)
+![three](./Assets/images/screenshot3.png)
 
 
 
