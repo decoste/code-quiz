@@ -176,3 +176,14 @@ goBackBtn.addEventListener("click", function () {
 });
 
 clearScrBtn.addEventListener("click", clearScores);
+
+// View High Score
+viewScrBtn.addEventListener("click", function () {
+    if (highScores.style.display === "none") {
+        highScores.style.display = "block";
+    } else if (highScores.style.display === "block") {
+        highScores.style.display = "none";
+    } else {
+        return alert("No scores to show.");
+    }
+});
