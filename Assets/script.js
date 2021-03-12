@@ -1,12 +1,12 @@
 // variables for page elements
 let timeEl = document.querySelector("p.time");
 let secondsLeft = 75;
-let score = document.querySelector("#score");
-const intro = document.querySelector("#intro");
+let scoreEl = document.querySelector("#score");
+const introEl = document.querySelector("#intro");
 const questionsEl = document.querySelector("#questions");
 let questionEl = document.querySelector("#question");
 let questionCount = 0;
-const answers = document.querySelector("#answers");
+const answersEl = document.querySelector("#answers");
 const finalEl = document.querySelector("#final");
 let initialsInput = document.querySelector("#initials");
 const highScores = document.querySelector("#highscores");
@@ -64,13 +64,13 @@ function setTime() {
             clearInterval(timerInterval);
             questionsEl.style.display = "none";
             finalEl.style.display = "block";
-            score.textContent = secondsLeft;
+            scoreEl.textContent = secondsLeft;
         }
     }, 1000);
 }
 
 function startQuiz() {
-    intro.style.display = "none";
+    introEl.style.display = "none";
     questionsEl.style.display = "block";
     questionCount = 0;
 
@@ -170,7 +170,7 @@ submitScrBtn.addEventListener("click", addScore);
 
 goBackBtn.addEventListener("click", function () {
     highScores.style.display = "none";
-    intro.style.display = "block";
+    introEl.style.display = "block";
     secondsLeft = 75;
     timeEl.textContent = `Time:${secondsLeft}s`;
 });
